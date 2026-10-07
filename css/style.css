@@ -1,0 +1,110 @@
+/* Reseta margens e usa box-sizing ensinado na Aula 3[cite: 77] */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tema escuro com cores inspiradas na Aula 9[cite: 5, 7] */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a2e; /* Fundo escuro */
+    color: #e0e0e0; /* Texto claro para contraste */
+    padding: 30px 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #f9a828; /* Cor de destaque (Laranja/Amarelo)[cite: 5] */
+    letter-spacing: 1px;
+}
+
+/* Estilo moderno para o campo de busca */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #16213e;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+input::placeholder {
+    color: #a0a0a0;
+}
+
+input:focus {
+    outline: 2px solid #f9a828; /* Destaque ao clicar para digitar */
+}
+
+/* Layout em Grid de 4 colunas (Aula 3)[cite: 81] */
+.grid-atores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* Estilização dos Cards com fundo escuro e animação */
+.card {
+    background-color: #0f3460;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    /* Transição suave para o efeito de hover[cite: 7] */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* O card sobe e ganha sombra ao passar o mouse[cite: 7] */
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.5);
+    border-bottom: 3px solid #f9a828; /* Detalhe visual elegante */
+}
+
+/* Padronizando o tamanho das fotos para o grid não quebrar */
+.card img {
+    width: 100%;
+    height: 300px; /* Altura fixa para todas as fotos */
+    object-fit: cover; /* Corta a imagem sem distorcer para caber na altura */
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+/* Destacando os rótulos "País:" e "Nascimento:" */
+.card strong {
+    color: #f9a828; 
+}
+
+/* Responsividade (Aula 3)[cite: 85] */
+@media (max-width: 888px) {
+    .grid-atores {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets[cite: 85] */
+    }
+}
+
+@media (max-width: 500px) {
+    .grid-atores {
+        grid-template-columns: 1fr; /* 1 coluna em celulares[cite: 85] */
+    }
+}

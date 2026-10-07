@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CheckPoint 2 - Atores e Atrizes</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Catálogo de Atores e Atrizes</h1>
+        
+        <!-- Campo de busca chamando a função no evento oninput -->
+        <input type="text" id="busca" placeholder="Buscar por nome..." oninput="filtrarAtores()">
+        
+        <!-- Container onde o JavaScript vai injetar os cards -->
+        <div class="grid-atores" id="grid"></div>
+    </div>
+
+    <!-- É crucial carregar o dados.js ANTES do script.js -->
+    <script src="/js/dados.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>
